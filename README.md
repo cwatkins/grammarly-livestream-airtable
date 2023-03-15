@@ -9,4 +9,3 @@
 5. Sign up for a [Grammarly account](https://www.grammarly.com/signup?pageStyle=developer)
 6. Add https://\*.alt.airtableblocks.com to your Grammarly web app origins
 7. Update [index.tsx](./frontend/index.tsx) to use your web app's client ID
-8. Run `npm install`
