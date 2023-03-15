@@ -2,9 +2,9 @@
   "scripts": {
     "lint": "eslint --ext .js,.jsx,.ts,.tsx frontend"
   },
+  "private": true,
   "dependencies": {
     "@airtable/blocks": "1.8.0",
-    "@grammarly/editor-sdk-react": "^2.3.9",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },

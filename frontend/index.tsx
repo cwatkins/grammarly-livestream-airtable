@@ -2,7 +2,6 @@ import "./styles.css"
 import { Box, initializeBlock, Button } from "@airtable/blocks/ui"
 import React, { useEffect, useRef, useState } from "react"
 import { useActiveRecord } from "./hooks/useActiveRecord"
-import { GrammarlyEditorPlugin } from "@grammarly/editor-sdk-react"
 
 function GrammarlyPluginDemo() {
   const { table, activeRecord, activeFieldId } = useActiveRecord()
@@ -17,11 +16,6 @@ function GrammarlyPluginDemo() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeFieldId, activeRecord?.id])
 
-  // Dispatch a change event when the text changes due to state changes
-  useEffect(() => {
-    textArea?.current?.dispatchEvent(new Event("change"))
-  }, [text])
-
   return (
     <Box className="container">
       <Box>
@@ -29,21 +23,14 @@ function GrammarlyPluginDemo() {
       </Box>
       {text.length > 0 ? (
         <Box className="grammarly-plugin-container">
-          <GrammarlyEditorPlugin
-            clientId=""
-            config={{
-              activation: "immediate",
+          <textarea
+            ref={textArea}
+            className="grammarly-text-area"
+            value={text}
+            onChange={(e) => {
+              setText(e.target.value)
             }}
-          >
-            <textarea
-              ref={textArea}
-              className="grammarly-text-area"
-              value={text}
-              onChange={(e) => {
-                setText(e.target.value)
-              }}
-            />
-          </GrammarlyEditorPlugin>
+          />
           <Box className="grammarly-button-container">
             <Button
               onClick={async () => {
