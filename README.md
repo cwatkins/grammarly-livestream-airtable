@@ -1,6 +1,6 @@
-## Grammarly Airtable Extension
+# Grammarly Airtable Extension
 
-# How to run this demo
+## How to run this demo
 
 1. Sign up for an Airtable account: [https://airtable.com/signup](https://airtable.com/signup)
 2. Get your Airtable API Key and copy it to your clipboard: [https://airtable.com/create/apikey](https://airtable.com/create/apikey).
